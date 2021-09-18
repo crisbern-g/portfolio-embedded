@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+
+.navigation-bar{
+    position: fixed;
+    display: flex;
+    background: rgb(90, 0, 126);
+    transition-property: width;
+    transition: 200ms ease-in;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    z-index: 20;
+}
+
+.navigation-nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navigation-item{
+    width: 100%;
+}
+
+.navigation-item.active svg{
+    fill: rgb(231, 77, 162) !important;
+}
+
+.navigation-item.inactive svg{
+    fill: white;
+}
+
+.navigation-link{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    color: white;
+    text-decoration: none !important;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+}
+
+
+.github-link svg{
+    transform: rotate(180deg);
+    transition-property: transform;
+    transition: 200ms ease-in;
+}
+
+.github-link{
+    margin-top: auto;
+}
+
+.navigation-link:hover svg{
+    fill: rgb(231, 77, 162) !important;
+}
+
+.navigation-link:hover .link-text{
+    color: rgb(231, 77, 162) !important;
+}
+
+.github-link:hover svg{
+    color: rgb(231, 77, 162) !important;
+    transform: rotate(0);
+} 
+
+/* large screens */
+@media only screen and (min-width:600px){
+    .navigation-bar{
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navigation-link svg{
+        min-width: 2rem;
+        min-height: 2rem;
+        margin: 0 1.2rem;
+        fill: white;
+    }
+
+    section{
+        margin-left: 5rem;
+    }
+}
+
+/* small screens */
+@media only screen and (max-width:600px){
+    .navigation-bar{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation-nav{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navigation-link{
+        align-items: center;
+    }
+
+    .navigation-link svg{
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        margin: 0 1rem;
+        fill: white;
+    }
+
+    section{
+        margin-left: 0;
+        margin-bottom: 5rem;
+    }
+}
